@@ -19,7 +19,7 @@ def browseFiles():
                                                         "*.*"))) 
     filename=window.filename
        
-    # Change label contents 
+    # Change label contents#T 
     label_file_explorer.configure(text="File Opened: "+filename) 
     return (filename)
 
@@ -58,7 +58,7 @@ def similar():
     from gensim.models import TfidfModel
     tf_idf = TfidfModel(corpus)
     from gensim.similarities import Similarity
-        # building the index
+        # building the index#I
     sims = Similarity(r'C:/Users/User/OneDrive/Desktop/UTeM/Sem5/NLP/Project/Real code',tf_idf[corpus],  #path based on your text file 
                                             num_features=len(dictionary))
     
@@ -73,7 +73,7 @@ def similar():
         file2_docs.append(line)
     avg_sims = [] # array of averages
     
-    # for line in query documents
+    # for line in query documents#N
     for line in file2_docs:
         # tokenize words
         query_doc = [w.lower() for w in word_tokenize(line)]
@@ -93,7 +93,7 @@ def similar():
         avg_sims.append(avg)  
     # calculate total average
     total_avg = np.sum(avg_sims, dtype=np.float)
-    # round the value and multiply by 100 to format it as percentage
+    # round the value and multiply by 100 to format it as percentage#A
     percentage_of_similarity = round(float(total_avg) * 100)
     # if percentage is greater than 100
     # that means documents are almost same
@@ -119,7 +119,7 @@ lable_0.pack()
 window.geometry("700x500") 
    
 #Set window background color 
-window.config(background = "light blue") 
+window.config(background = "yfc") 
    
 # Create a File Explorer label 
 label_file_explorer = Label(window,  
@@ -162,3 +162,4 @@ label_percentage.pack()
 
 # Let the window wait for any events 
 window.mainloop() 
+#By Thitthima
